@@ -1,0 +1,71 @@
+1. Using proper pseudo-code, describe the following primitive algorithms:
+
+	Making coffee;
+
+	Pseudocode:
+	IF pot is empty THEN
+		fill pot with water.
+	Put pot on stove stop burner.
+	Turn burner control to high.
+	Grind coffee beans.
+	Put ground coffee beans into French press coffee maker.
+	WHILE (pot is on stove top)
+		IF (water is boiling)
+			Take pot off stove
+		ELSE
+			Do nothing
+	Allow water to cool for about 30 seconds.
+	Pour water into French press.
+	FOR (four minutes)
+		allow mixture to steep for 4 minutes.
+	Strain the mixture using the French press filter.
+	Pour into mug.
+	For (3 minutes)
+		allow to cool
+	Enjoy!
+
+	Washing dishes;
+
+	Pseudocode:
+	WHILE (there are dirty dishes)
+		IF (water is off) THEN
+			turn water one
+		pick up a dish	
+		rinse dish
+		pick up sponge
+		squirt a little soap on sponge
+		scrub dish with soapy sponge
+		rinse dish
+		turn off water
+		pick up towel
+		dry dish with towel
+		place dish in cabinet
+
+
+	A choice of your own.
+
+	BRUSHING TEETH:
+	
+	IF (MORNING OR NIGHT)
+		IF (teeth are not brushed)
+			Go to bathroom
+			Take out toothbrush
+			Squeeze out toothpaste onto toothbrush
+			WHILE (Teeth are not clean)
+				Scrub teeth with toothbrush
+			Rinse mouth with water
+			Rinse toothbrush in sink
+			Put away toothbrush
+ 
+
+2. As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try to pick the best algorithm for a situation. Name three companies who created an algorithm that made them successful, e.g., Google's search algorithm. It doesn't need to be a tech example (such as a recipe or manufacturing a product). Google's algorithm produces more relevant results than other search engines; what about each of your cases make them stand out?
+
+McDonalds: McDonalds was the first burger restaurant to perfect the fast-food model. The way they divided the labor gave them the ability to produce burgers at an extremely fast rate. Now they continue to dominate the fast-food market. 
+
+Walmart: Walmart is able to offer goods at an extremely low price by cutting out middlemen and sourcing large quantities. By offering lower prices and reducing costs wherever they can, they are incredibly successful and are one of the largest companies in the US.
+
+Amazon: Amazon is able to offer fast delivery of many different products. Their success comes from their ability to offer a wide array of products and a buying process that is simple and easy. 
+
+3.Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
+
+A: An algorithm must first and foremost solve the problem it is intended for. From there, an efficient algorithm more or less efficient depending on how much resources the algorithm costs. These resources can include time, energy, space, etc.

@@ -1,0 +1,72 @@
+1. What is a real-life scenario that uses linear search?
+
+	A: When a person must search for a value within an unsorted collection of values, they often use a linear search method. If a person were playing 'Where's Waldo?', they may just start at one corner of the page and search one spot at a time, in a linear fashion until they find Waldo. Because the collection is unsorted, this is the most efficient way to find Waldo.
+
+2. What is a real-life scenario that uses binary search?
+
+	A: When searching for a name in a phone book, a person can use a binary search method to find the correct page. To begin, the phone book is opened to the middle. If the name being searched for comes before the middle page, eliminate all of the pages that come after the middle and repeat the process. If the name comes after the middle, then eliminate all pages before the middle and repeat the process. As the remaining possibilities are cut in half after every iteration, the binary search method is much more efficient than the linear search. The phone book example only works because it is ordered alphabetically. 
+
+3. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using linear search?
+	
+	A: 7
+
+4.Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using binary search?
+
+	A: 3
+
+5. Given an unsorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+
+	A: Because the collection is unsorted, a linear search must be used. If a binary search was used, it would risk missing the value since there is no way to know if the value comes before or after the middle index.
+
+6. Given a sorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+
+	A: A binary search would be much faster than the linear search. Because the collection is sorted and large in size, the binary search should be used.
+
+-------------------------------PROGRAMMING ASSIGNMENT-------------------------------
+
+1. You and a friend have set a wager to see who can find the word "Albatross" in the dictionary the fastest. Write a program to allow you to win the bet.
+
+let binarySearch = (target, array) => {
+  let middle = Math.floor(array.length / 2)
+  let first = 0
+  let last = array.length - 1
+
+  while (array[middle] !== target && first < last) {
+    console.log('middle = ' + middle)
+    if (array[middle] > target) {
+      last = middle - 1
+    }
+    else {
+      first = middle + 1
+    }
+    middle = Math.floor((first + last) / 2)
+  }
+  return (array[middle] == target) ? middle : -1
+}
+
+let dictionary = [
+  'abc',
+  'albatross',
+  'bear',
+  'dictionary',
+  'elephant',
+  'gyro',
+  'harmonica',
+  'jordan'
+]
+
+console.log(binarySearch('albatross', dictionary))
+
+2. You work at a pet store, and a child has asked you to net the only white-spotted goldfish from the fish tank. Write a program that will help you net the right fish.
+
+let getFish = (tank, color) => tank.find(fish => fish.color == color)
+
+const tank = [
+  {name: 'spot', color: 'white-spotted'},
+  {name: 'stripey', color: 'white-striped'},
+  {name: 'pikachu', color: 'yellow'},
+  {name: 'magikarp', color: 'orange'},
+  {name: 'gyarados', color: 'blue'}
+]
+
+console.log(getFish(tank, 'white-spotted'));

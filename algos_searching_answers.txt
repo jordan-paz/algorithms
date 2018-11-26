@@ -70,3 +70,14 @@ const tank = [
 ]
 
 console.log(getFish(tank, 'white-spotted'));
+
+
+PSEUDOCODE:
+
+findFish = function(tank, color) {
+	FOR each fish in the tank
+		IF fish color == color THEN
+			RETURN fish
+	END FOR
+	RETURN "fish not found"
+}

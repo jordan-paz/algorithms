@@ -1,0 +1,39 @@
+1. Write pseudocode for bubble sort.
+
+	A:  
+
+FUNCTION bubbleSort(collection)
+   REPEAT
+     SET swapped to false
+     FOR i = FIRST INDEX of collection to LAST INDEX of collection - 1	
+       IF collection[i] > collection[i + 1] THEN
+         SET tmp to collection[i]
+         SET collection[i] to collection[i + 1]
+         SET collection[i + 1] to tmp
+         SET swapped to true
+       END IF
+     END FOR
+   UNTIL swapped is FALSE
+   RETURN collection
+ END FUNCTION
+
+2. 
+
+FUNCTION quickSort(collection)
+   IF length of collection == 0
+	return []
+   IF length of collection == 1
+	return collection[0]
+   SET pivotPoint to ELEMENT at LAST INDEX of collection
+   SET left = []
+   SET right = []
+   FOR i = FIRST INDEX of collection to LAST INDEX of collection - 1
+	IF collection[i] < pivotPoint
+		PUSH collection[i] into left[]
+	ELSE IF collection[i] > pivotPoint
+		PUSH collection[i] into right[]
+
+   END FOR
+   RETURN CONCATENATE quickSort(left) and pivotPoint and quickSort(right) 
+   
+		

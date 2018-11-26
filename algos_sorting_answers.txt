@@ -17,7 +17,7 @@ FUNCTION bubbleSort(collection)
    RETURN collection
  END FUNCTION
 
-2. 
+2. Write pseudocode for quicksort.
 
 FUNCTION quickSort(collection)
    IF length of collection == 0
@@ -35,5 +35,13 @@ FUNCTION quickSort(collection)
 
    END FOR
    RETURN CONCATENATE quickSort(left) and pivotPoint and quickSort(right) 
+
+3. We talked about time complexity in a previous checkpoint, and how to get an idea of the efficiency of an algorithm. After looking at the pseudocode for the above sorting methods, identify why merge sort and quick sort are much more efficient than the others. Walking through each algorithm with a few sample collections may help.
+
+A: For large data sets, merge sort and quick sort are more efficient than bubble sort, selection sort, or insertion sort because they require less steps. However, for smaller sets of data a bubble sort can be more efficient than other more complex algorithms. Assuming the data set is large, a bubble sort becomes very inefficient because it must compare every item multiple times and it must also swap items very often. It must move items several times to get them to the correct place. Merge sort and quick sort do not have to swap any items, but rather use a divide and conquer technique by making new arrays made up of items from the original, then merging the new arrays. This method is much more efficient as it must make less comparisons and does not require swapping. 
+
+4. All of the sorts addressed in this checkpoint are known as comparison sorts. Research bucket sort and explain how it works. What is the ideal input for bucket sort?
+
+A: Bucket sort first creates an array  of arrays or 'buckets'. The numbers in the original unsorted array are each put in a bucket. The bucket that they go into depends on their value. For example, one bucket could hold all numbers between 0 and 10, another bucket could hold all numbers between 11 and 20, etc. Once all numbers are in their buckets, the individual buckets are then sorted and the buckets are then put back together. The optimal input data for this sorting algorithm would be a large data set with known upper and lower bounds.
    
 		

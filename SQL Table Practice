@@ -1,0 +1,138 @@
+###QUESTIONS
+######1. List the commands for adding, updating, and deleting data.
+
+>A:
+
+Adding:
+```
+INSERT INTO <name of database> (<name(s) of column(s)>)
+VALUES (<value(s)>);
+```
+Updating:
+```
+UPDATE <name of database> SET <name of column>=<new value> WHERE <condition>;
+```
+Deleting:
+```
+DELETE FROM <database> WHERE <condition>;
+```
+
+######2. Explain the structure for each type of command.
+
+>A:
+
+**Adding:** First the INSERT keyword and then the INTO keyword to tell SQL we will be adding data. Next is the name of the database we will be adding data to. If inserting multiple rows, next is a set of parenthesis holding the names of the columns for the data to be inserted into, each name separated by a comma. The order of the column names must correspond to the order we list the values to be inserted in the next step. After the columns have been named, the VALUES keyword follows. Then the values are listed. If we are adding a single row, then a single pair of parenthesis containing the new values, each separated by a comma and in the correct order is sufficient. If multiple rows must be added, then multiple sets of parenthesis containing values, each separated by a comma, are needed.
+
+
+**Updating:**
+First, the UPDATE keyword tells SQL that we will be updating some data. After a space will be the database name so SQL knows which database we will be updating. Next is the SET keyword followed by the name of the column where the data being updated exists, plus an equal sign followed by the new value. Finally there is a WHERE condition, which can be a number of conditions in order to target the specific row or rows.
+
+**Deleting:**
+First the DELETE keyword tells SQL we are deleting a row. The FROM key word followed by the name of the database tells SQL which database to delete data from. Next is a WHERE condition which targets a specific row or rows.
+
+######3. What are some of the data types that can be used in tables? Give a real-world example of each type.
+
+A: Integers, floats, booleans, dates, and timestamps are each datatypes that can be used in tables. An integer may be used to count likes or shares on a social media website. A boolean can be used to indicate whether or not a user is online, or if a product is in stock. A timestamp can be used to track orders and know which came in first.
+
+######4. Decide how to create a new table to hold a list of people invited to a wedding dinner. The table needs to have first and last names, whether they sent in their RSVP, the number of guests they are bringing, and the number of meals (1 for adults and 1/2 for children).
+
+**Which data type would you use to store each of the following pieces of information?**
+
+First and last name: text
+
+Whether they sent in their RSVP: Boolean
+
+Number of guests: Integer
+
+Number of meals: Integer
+
+**Write a command that creates the table to track the wedding dinner.**
+
+```
+  CREATE TABLE weddinglist (
+      name text,
+      sentRSVP boolean,
+      numberOfGuests integer,
+      numberOfMeals integer
+  );
+```
+
+**Write a command that adds a column to track whether the guest sent a thank you card.**
+```
+ALTER TABLE weddingList ADD COLUMN sentThankYouCard boolean;
+```
+***You have decided to move the data about the meals to another table, so write a command to remove the column storing the number meals from the wedding table.***
+```
+ALTER TABLE weddingList DROP COLUMN numberOfMeals;
+```
+***The guests will need a place to sit at the reception, so write a command that adds a column for table number.***
+
+```
+ALTER TABLE weddingList ADD COLUMN tableNumber integer;
+```
+The wedding is over and we do not need to keep this information, so write a command that deletes the table numbers from the database.
+
+`DROP TABLE weddingList;`
+
+######5.
+
+**Write a command to create a new table to hold the books in a library with the columns ISBN, title, author, genre, publishing date, number of copies, and available copies.**
+
+```
+CREATE TABLE library (
+  ISBN char(13),
+  title text,
+  author text,
+  genre text,
+  publishDate date,
+  copies integer,
+  availableCopies integer
+);
+```
+
+**Find three books and add their information to the table.**
+```
+INSERT INTO library (ISBN, title, author, genre, publishDate, numberOfCopies, availableCopies)
+VALUES
+('1234567898765', 'Harry Potter and the Sorcerer's Stone', 'J.K. Rowling', 'Fantasy', 1995-12-17, 10, 5),
+('2234567898765', 'Harry Potter and the Chamber of Secrets', 'J.K. Rowling', 'Fantasy', 1996-8-20, 8, 4),
+('3234567898765', 'Harry Potter and the Prisoner of Azkaban', J.K. Rowling, 'Fantasy', 1997-9-9, 5, 0);
+```
+
+**Someone has just checked out one of the books. Change the number of available copies to 1 fewer.**
+```
+UPDATE library SET availableCopies = availableCopies - 1 WHERE ISBN = '1234567898765';
+```
+
+**Now one of the books has been added to the banned books list. Remove it from the table.**
+
+`DELETE FROM library WHERE ISBN = '1234567898765'`
+
+######6.
+
+**Write a command to make a new table to hold spacecrafts. Information should include id, name, year launched, country of origin, a brief description of the mission, orbiting body, if it is currently operating, and its approximate miles from Earth.**
+
+```
+CREATE TABLE spacecrafts (
+  id char(6),
+  name text,
+  year integer
+  launchDate date,
+  originCountry text,
+  missionSummary text,
+  orbitingBody text,
+  operating boolean,
+  milesFromEarth float
+);
+``
+
+**In addition to the table creation, provide commands that perform the following operations:**
+
+**Add three non-Earth-orbiting satellites to the table.**
+INSERT INTO spacecrafts (id, name, year, launchDate, originCountry, missionSummary, orbitingBody, operating, milesFromEarth)
+VALUES ('000001', 'Millennium Falcon', 4005, 4006-12-17, 'Tatooine', 'Destroy death star', 'Jupiter', TRUE, 12000.6), (), ()
+
+**Remove one of the satellites from the table since it has just crashed into the planet.**
+
+
+**Edit another satellite because it is no longer operating and change the value to reflect that.**
